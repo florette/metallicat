@@ -448,6 +448,10 @@ a {
     text-align: center;
 }
 
+.hero img {
+    position: relative;
+    top: -86px;
+}
 @media screen and (max-width: 767px) {
     .hero img {
         height: 400px
