@@ -353,56 +353,7 @@ img {
     display: inline-block;
 }
 
-/* Kukuri */
-.link--kukuri {
-    text-transform: uppercase;
-    font-weight: 900;
-    overflow: hidden;
-    line-height: 1;
-    color: #fff;
-}
 
-.link--kukuri:hover {
-    color: #c5c2b8;
-}
-
-.link--kukuri::after {
-    content: '';
-    position: absolute;
-    height: 16px;
-    width: 100%;
-    top: 50%;
-    margin-top: -8px;
-    right: 0;
-    background: #F9F9F9;
-    -webkit-transform: translate3d(-100%,0,0);
-    transform: translate3d(-100%,0,0);
-    -webkit-transition: -webkit-transform 0.4s;
-    transition: transform 0.4s;
-    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-}
-
-.link--kukuri:hover::after {
-    -webkit-transform: translate3d(100%,0,0);
-    transform: translate3d(100%,0,0);
-}
-
-.link--kukuri::before {
-    content: attr(data-letters);
-    position: absolute;
-    z-index: 2;
-    overflow: hidden;
-    color: #424242;
-    white-space: nowrap;
-    width: 0%;
-    -webkit-transition: width 0.4s 0.3s;
-    transition: width 0.4s 0.3s;
-}
-
-.link--kukuri:hover::before {
-    width: 100%;
-}
 
 /* ==========================================================================
    Website
@@ -410,7 +361,7 @@ img {
 
 body {
     background: #000;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Metamorphous', cursive;
     font-size: 20px;
 }
 
@@ -442,6 +393,13 @@ a {
 
 .logo {
     text-align: center;
+    z-index: 2;
+}
+
+.logo img {
+    position: relative;
+    z-index: 1;
+    top: 14px;
 }
 
 .hero {
@@ -454,11 +412,14 @@ a {
 }
 @media screen and (max-width: 767px) {
     .hero img {
-        height: 400px
+        height: 400px;
+        top: -30px;
     }
 }
 
 .header {
+    background: url(../img/bg2.jpg) center top;
+    background-size: cover;
     height: 100vh;
 }
 
@@ -467,6 +428,7 @@ a {
     position: absolute;
     width: 100%;
     bottom: 0;
+    z-index: 10;
 }
 
 .nav__list {
@@ -494,24 +456,23 @@ a {
     content: "";
     position: absolute;
     width: 2px;
-    height: 30px;
+    height: 24px;
     background: #fff;
     left: -1px;
-    top: 22px;
+    top: 14px;
 }
 
 .nav__item:last-child:after {
     content: "";
     position: absolute;
     width: 2px;
-    height: 30px;
+    height: 24px;
     background: #fff;
     right: -1px;
-    top: 22px;
+    top: 14px;
 }
 
 .nav__item a {
-    font-size: 30px;
     display: inline-block;
     text-transform: uppercase;
 }
@@ -528,6 +489,7 @@ a {
 .product__item {
     width: 100%;
     float: left;
+    padding-bottom: 30px;
 }
 @media screen and (min-width: 768px) {
     .product__item {
@@ -547,7 +509,7 @@ a {
 }
 
 .mobile--menu a {
-    font-size: 30px;
+    font-size: 20px;
     display: inline-block;
     text-transform: uppercase;
 }
